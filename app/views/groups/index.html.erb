@@ -1,13 +1,15 @@
 <div class="col-md-12">
   <div class="group">
-    <%= link_to("New movie", new_group_path, class: "btn btn-primary pull-right") %>
+  <button type="button" class="btn btn-default">Top comments</button>
+  <button type="button" class="btn btn-default">Newest first</button>
+    <%= link_to("Post a Movie Review", new_group_path, class: "btn btn-link pull-right") %>
   </div>
   <table class="table table-hover">
     <thead>
       <tr>
-        <td><div class="well">Title</div></td>
-        <td><div class="well">Description</div></td>
-        <td><div class="well">Creator </div></td>
+        <td>Title</td>
+        <td>Description</td>
+        <td>Creator </td>
       </tr>
     </thead>
     <tbody>
