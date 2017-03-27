@@ -48,9 +48,9 @@ class GroupsController < ApplicationController
 
     if !current_user.is_member_of?(@group)
       current_user.join!(@group)
-      flash[:notice] = "加入本讨论版成功！"
+      flash[:notice] = "Add to My Favorites!~"
     else
-      flash[:warning] = "你已经是本讨论版成员了！"
+      flash[:warning] = "The Review's already in My Favorites!~"
     end
 
     redirect_to group_path(@group)
@@ -61,7 +61,7 @@ class GroupsController < ApplicationController
 
     if current_user.is_member_of?(@group)
       current_user.quit!(@group)
-      flash[:alert] = "已退出本讨论版!"
+      flash[:alert] = "Remove from My Favorites!~"
     else
       flash[:warning] ="你不是本讨论版成员，怎么退出 XD"
     end

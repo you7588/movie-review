@@ -3,11 +3,12 @@
 
     <span class="pull-right">
       <% if current_user && current_user.is_member_of?(@group) %>
-        <label class="label label-success"> favorite </tabel>
-          <%= link_to("Quit Group", quit_group_path(@group), method: :post, class: "btn btn-default") %>
+        <%= link_to("Remove", quit_group_path(@group), method: :post, class: "btn btn-pull-right") %>
+        <label class="label label-success"> From My Favorites </tabel>
+
           <% else %>
-        <label class="label label-warning"> not favorite </label>
-        <%= link_to("Join Group", join_group_path(@group), method: :post, class: "btn btn-default") %>
+        <%= link_to("Add", join_group_path(@group), method: :post, class: "btn btn-pull-right") %>
+        <label class="label label-warning"> to My Favorites </label>
           <% end %>
     </span>
     <%= link_to("Write a Post", new_group_post_path(@group), class: "btn btn-link pull-right")%>
