@@ -63,7 +63,7 @@ class GroupsController < ApplicationController
       current_user.quit!(@group)
       flash[:alert] = "Remove from My Favorites!~"
     else
-      flash[:warning] ="你不是本讨论版成员，怎么退出 XD"
+      flash[:warning] ="It's already added to My Favorites!~"
     end
 
     redirect_to group_path(@group)
