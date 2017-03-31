@@ -1,16 +1,16 @@
 <div class="col-md-12">
   <div class="group">
-  <button type="button" class="btn btn-default">Top comments</button>
-  <button type="button" class="btn btn-default">Newest first</button>
     <%= link_to("Post a Movie Review", new_group_path, class: "btn btn-link pull-right") %>
   </div>
-  <table class="table table-hover">
+  <table class="table table-boldered">
     <thead>
       <tr>
         <td>Title</td>
         <td>Description</td>
-        <td>Creator </td>
+        <td>Creator</td>
+        <td>Created time</td>
       </tr>
+
     </thead>
     <tbody>
        <%= render :partial => "group_item", :collection => @groups, :as => :group %>
