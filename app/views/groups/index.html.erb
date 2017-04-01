@@ -1,5 +1,47 @@
 <div class="col-md-12">
   <div class="group">
+    <div class="btn-group">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+        All genres
+          <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+        <li><a href="#">Action</a></li>
+        <li><a href="#">Adventure</a></li>
+        <li><a href="#">Animation</a></li>
+        <li><a href="#">Biopic</a></li>
+        <li><a href="#">Comedy</a></li>
+        <li><a href="#">Crime</a></li>
+        <li><a href="#">Documentary</a></li>
+        <li><a href="#">Drama</a></li>
+        <li><a href="#">Family</a></li>
+        <li><a href="#">Fantasy</a></li>
+        <li><a href="#">Horro</a></li>
+        <li><a href="#">Horror</a></li>
+        <li><a href="#">Music</a></li>
+        <li><a href="#">Mystery</a></li>
+        <li><a href="#">Romance</a></li>
+        <li><a href="#">Sc-Fi</a></li>
+        <li><a href="#">Sci-Fi</a></li>
+        <li><a href="#">Sports</a></li>
+        <li><a href="#">Thiller</a></li>
+        <li><a href="#">Thriller</a></li>
+        <li><a href="#">War</a></li>
+        <li><a href="#">Western</a></li>
+      </ul>
+      <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Order
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
+          <li><a href="#">Latest</a></li>
+          <li><a href="#">Rating</a></li>
+          <li><a href="#">Title</a></li>
+          <li><a href="#">Classification</a></li>
+        </ul>
+    <div class="dropdown clearfix">  </div>
+</div>
     <%= link_to("Post a Movie Review", new_group_path, class: "btn btn-link pull-right") %>
   </div>
   <table class="table table-boldered">
@@ -16,4 +58,6 @@
        <%= render :partial => "group_item", :collection => @groups, :as => :group %>
     </tbody>
   </table>
+
+
 </div>
