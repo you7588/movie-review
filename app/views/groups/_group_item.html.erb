@@ -1,4 +1,5 @@
 <tr>
+
   <td><%= link_to(group.title, group_path(group)) %></td>
   <td><%= render_group_description(group) %></td>
   <td><%= group.user.email %></td>
@@ -10,7 +11,7 @@
       <%= link_to("Delete", group_path(group),    class: "btn btn-sm btn-default",
                   method: :delete, data: { confirm: "Are you sure?" } )%>
     <% end %>
-    
+
   </td>
 
 </tr>
