@@ -1,3 +1,14 @@
+/*CSS reset*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,
+blockquote,th,td {margin:0;padding:0;}
+table {border-collapse:collapse;border-spacing:0;}
+fieldset,img {border:0}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}
+ol,ul {list-style:none}
+caption,th {text-align:left}
+h1,h2,h3,h4,h5,h6 {font-size:100%;font-weight:normal}
+q:before,q:after {content:''}
+abbr,acronym { border:0}
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -18,3 +29,37 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
+
+
+// 以下是电影项目
+
+ .group-title {  //文章标题
+   background-color: #66ff66;
+   font-family: 'yahei';
+ }
+ .group-description { //文章内容
+   line-height: 30px;  //行高
+   letter-spacing: 2px; //字间距
+ }
+ #group-created_at {  //时间显示
+   margin-top: 20px;  //上边距
+ }
+ #group-item {        //每个电影项下边距
+   margin-bottom: 40px;
+ }
+#right-text {   //屏幕右边的文字
+  width: 40%;    //设置宽度
+  margin-left: 20px;  //左边距
+  color: grey;     //字休设为灰色
+  letter-spacing: 2px;   //字间距
+}
+
+// 以下是首页长横幅
+#home-well {
+  width: 100%;
+  background: rgb(51,122, 183);
+  padding-left: 15px;
+}
+#home-title {
+  font-size: 50px;
+}

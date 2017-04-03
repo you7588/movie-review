@@ -2,5 +2,16 @@
     <h2>Edit Review</h2>
     <hr>
 
-    <%= render "form" %>
+    <%= simple_form_for @group do |f| %>
+      <div class="form-group">
+        <%= f.input :title, input_html: { class: "form-control"} %>
+        <%= f.input :description, input_html: { class: "form-control"} %>
+        <% if @group.image.present? %>
+        <span>目前图片</span>
+        <%= image_tag(@group.image.thumb.url, class: "thumbnail")%>
+        <% end %>
+        <%= f.input :image, as: :file %>
+      </div>
+      <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
+    <% end %>
 </div>

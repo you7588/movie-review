@@ -1,3 +1,14 @@
+<div class="col-md-4 col-offset-4">
+  <h1 id="home-title">最新影评</h1>
+</div>
+<br/>
+
+<div class="col-md-12">
+  <div class="row">
+    <div class="well" id="home-well"></div>
+  </div>
+</div>
+
 <div class="col-md-12">
   <div class="group">
     <div class="dropdown clearfix">  </div>
@@ -41,19 +52,52 @@
           <li><a href="#">Title</a></li>
           <li><a href="#">Classification</a></li>
         </ul>
-
-
-
-</div>
-    <%= link_to("Post a Movie Review", new_group_path, class: "btn btn-link pull-right") %>
+      </div>
+      <%= link_to("Post a Movie Review", new_group_path, class: "btn btn-success pull-right") %>
+    </div>
   </div>
-  <table class="table table-boldered">
+</div>
+<br/><br/><br/>
+
+
+  <!-- <div>
+    <%= link_to("Post a Movie Review", new_group_path, class: "btn btn-success pull-right") %>
+  </div>
+  <br/>
+  <hr/> -->
+  <!-- <table class="table table-boldered">
 
 
     <tbody>
        <%= render :partial => "group_item", :collection => @groups, :as => :group %>
     </tbody>
-  </table>
+  </table> -->
 
+<div class="col-md-8 group-content clearfix">
+  <% @groups.each do |group| %>
+    <div class="row" id="group-item">
+      <div class="col-md-2">
+        <% if !group.image.present? %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "img-thumbnail img-responsive")%>
+          <% else %>
+          <%= image_tag(group.image.thumb.url, class: "img-thumbnail img-responsive")%>
+          <% end %>
+        </div>
+        <div class="col-md-10 clearfix">
+          <h4 class="group-title well"><%= group.title %>  <small>(<%= group.user.email %>)</small> </h4>
+          <div class="group-description" id="group-description"><%= group.description %></div>
+          <p class="pull-right" id="group-created_at"><small><%= group.created_at.to_s(:db) %></small></p>
+        </div>
+      </div>
 
-</div>
+  <% end %>
+      </div>
+  <div class="col-md-4">
+    <div id="right-text">
+    <p>如果你觉得一篇评论对你有帮助，请你点击“有用”。你的投票直接决定哪些评论出现在豆瓣首页和“豆瓣最受欢迎的评论”里，以及在书、电影和音乐介绍页里评论的排序。所有“没用”的点击都是匿名的。</p>
+    <div class="rrs">
+      <i class="fa fa-rss"></i>
+      <%= link_to '订阅最新上线的电影影评～', '#'%>
+    </div>
+    </div>
+  </div>
